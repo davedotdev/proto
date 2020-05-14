@@ -4,7 +4,7 @@ syntax = "proto3";
 import "proto_node/proto_node.proto";
 import "proto_common/proto_common.proto"; 
 
-option go_package = "github.com/davedotdev/edmund/proto_vertex";
+option go_package = "github.com/davedotdev/proto/eddie/proto_vertex";
 
 message VERTEXLIST {
   repeated VERTEX vertex = 1;

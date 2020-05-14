@@ -1,7 +1,7 @@
 // This file contains an inventory PB for a device
 syntax = "proto3";
 
-option go_package = "github.com/davedotdev/edmund/proto_common";
+option go_package = "github.com/davedotdev/proto/eddie/proto_common";
 
 enum Operation {
   CREATE = 0;
