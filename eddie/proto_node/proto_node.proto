@@ -1,0 +1,17 @@
+// This file contains an inventory PB for a device
+syntax = "proto3";
+
+option go_package = "github.com/davedotdev/edmund/proto_node";
+import "proto_common/proto_common.proto";
+
+message NODELIST {
+  repeated NODE node = 1;
+}
+
+message NODE {
+  int64 NodeIdentity = 1;
+  string type = 2; 
+  repeated KV kv = 3;
+  repeated KV updatedkv = 4;
+  Operation operation = 5; 
+}

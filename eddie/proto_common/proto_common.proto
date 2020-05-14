@@ -1,0 +1,30 @@
+// This file contains an inventory PB for a device
+syntax = "proto3";
+
+option go_package = "github.com/davedotdev/edmund/proto_common";
+
+enum Operation {
+  CREATE = 0;
+  READ   = 1;
+  UPDATE = 2;
+  DELETE = 3;
+}
+
+message KV  {
+  string key = 1;
+  string value = 2;
+  T vtype = 3;
+  bool disabled = 4;
+}
+
+enum T {
+  // Inline with Neo types. Float is a point.
+  STRING = 0;
+  INT64 = 1; 
+  FLOAT64 = 2;
+  BOOL = 3;
+  SLICE_STRING = 4;
+  SLICE_INT64 = 5;
+  SLICE_FLOAT64 = 6;
+  SLICE_BOOL = 7;
+}

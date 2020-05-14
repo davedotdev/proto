@@ -1,0 +1,30 @@
+// This file contains an inventory PB for a device
+syntax = "proto3";
+
+option go_package = "github.com/davedotdev/edmund/proto_inventory";
+import "proto_common/proto_common.proto"; 
+
+message DEVICE {
+  string   name = 1;
+  string   vendor = 2;
+  string   platform = 3;
+  repeated RouteEngine routeengine = 4;
+  repeated Linecard linecard = 5;
+  Operation operation = 6;
+}
+
+message Linecard  {
+  uint32 slot = 1;
+  string model = 2;
+  string portType = 3;
+  uint32 ports = 4;
+  bool   explicit = 5; // If explicit, the graph has a LCx node, if not, the ports attach to the device
+  Operation operation = 6;
+}
+
+message RouteEngine  {
+  uint32 slot = 1;
+  string model = 2;
+  string mgmt_if = 3;
+  Operation operation = 4;
+}

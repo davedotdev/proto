@@ -1,0 +1,21 @@
+// This file contains an inventory PB for a device
+syntax = "proto3";
+
+import "proto_node/proto_node.proto";
+import "proto_common/proto_common.proto"; 
+
+option go_package = "github.com/davedotdev/edmund/proto_vertex";
+
+message VERTEXLIST {
+  repeated VERTEX vertex = 1;
+}
+
+message VERTEX {
+  int64 RelIdentity = 1;
+  NODE nodeA = 2;
+  NODE nodeB = 3;
+  string type = 4;
+  Operation operation = 5;
+  repeated KV kv = 6;
+  repeated KV updatedkv = 7;
+}
