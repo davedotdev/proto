@@ -17,6 +17,10 @@ message KV  {
   bool disabled = 4;
 }
 
+message Do {
+  Operation Operator = 1;
+}
+
 enum T {
   // Inline with Neo types. Float is a point.
   STRING = 0;
