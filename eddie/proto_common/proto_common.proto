@@ -8,6 +8,8 @@ enum Operation {
   READ   = 1;
   UPDATE = 2;
   DELETE = 3;
+  PROCESSING = 4;
+  DONE = 5;
 }
 
 message KV  {
