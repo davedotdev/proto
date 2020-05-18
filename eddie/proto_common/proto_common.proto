@@ -21,6 +21,7 @@ message KV  {
 
 message Do {
   Operation Operator = 1;
+  string Provider = 2;
 }
 
 enum T {
