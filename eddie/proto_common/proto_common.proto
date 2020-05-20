@@ -10,6 +10,7 @@ enum Operation {
   DELETE = 3;
   PROCESSING = 4;
   DONE = 5;
+  READY = 6;
 }
 
 message KV  {
