@@ -19,3 +19,12 @@ message VERTEX {
   repeated KV kv = 6;
   repeated KV updatedkv = 7;
 }
+
+message VERTEXLITE {
+  int64 RelIdentity = 1;
+  int64 EndA = 2;
+  int64 EndB = 3;
+  Operation operation = 4;
+  repeated KV kv = 5;
+  repeated KV updatedkv = 6;
+}
