@@ -14,7 +14,13 @@ enum Severity {
   DEBUG = 7;
 }
 
+enum Status {
+  ACK = 0;
+  ERR = 1;
+}
+
 message Log  {
   string Message = 1;
-  Severity Code = 2;
+  Severity Severity = 2;
+  Status Code = 3;
 }
