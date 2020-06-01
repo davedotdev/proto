@@ -1,0 +1,20 @@
+// This file contains an inventory PB for a device
+syntax = "proto3";
+
+option go_package = "github.com/davedotdev/proto/natslog/proto_natslog";
+
+enum Severity {
+  EMERGENCY = 0;
+  ALERT = 1;
+  CRITICAL = 2;
+  ERROR = 3;
+  WARNING = 4;
+  NOTICE = 5;
+  INFO = 6;
+  DEBUG = 7;
+}
+
+message Log  {
+  string Message = 1;
+  Severity Code = 2;
+}
