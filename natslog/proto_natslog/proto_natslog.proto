@@ -23,4 +23,7 @@ message Log  {
   string Message = 1;
   Severity Severity = 2;
   Status Code = 3;
+  string ServiceName = 4;
+  string Host = 5;
+  string PID = 6;
 }
