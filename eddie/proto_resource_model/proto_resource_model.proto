@@ -1,0 +1,40 @@
+// This file contains an inventory PB for a device
+syntax = "proto3";
+
+option go_package = "github.com/davedotdev/proto/eddie/proto_resource_model";
+
+enum State {
+	INIT = 0;
+	PLAN = 1;
+	APPROVALS = 2;
+	DEPLOY = 3;
+	DEPLOYED = 4;
+	ERROR = 5;
+}
+
+enum MetaType {
+	GRAPH = 0;
+	JOB = 1;
+}
+
+message Plans {
+  string CFGPlanURL = 1;
+  string TFPlanURL = 2;
+  string UUID = 3;
+}
+
+message History {
+  string Time = 1;
+  State State = 2;
+  string Description = 3;
+  string Username = 4;
+}
+
+message TFMeta {
+  MetaType MetaType = 1;
+  string TransactionUUID = 2;
+  string Description = 3;
+  Plans Plans = 4;
+  State State = 5;
+  History History = 6;
+}

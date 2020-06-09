@@ -1,0 +1,15 @@
+// This file contains an inventory PB for a device
+syntax = "proto3";
+
+option go_package = "github.com/davedotdev/proto/eddie/proto_uuid";
+
+enum CODE {
+  REQ = 0;
+  RES = 1;
+}
+
+message UUID  {
+  CODE Operation = 1;
+  string UUID = 2;
+}
+
