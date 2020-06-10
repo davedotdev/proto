@@ -31,10 +31,14 @@ message History {
 }
 
 message TFMeta {
-  MetaType MetaType = 1;
-  string TransactionUUID = 2;
-  string Description = 3;
-  Plans Plans = 4;
-  State State = 5;
-  History History = 6;
+  string ProviderName = 1;
+  string ResourceName = 2;
+  string Payload = 3;
+  MetaType MetaType = 4;
+  string TransactionUUID = 5;
+  string TransactionName = 6;
+  string Description = 7;
+  repeated Plans Plans = 8;
+  State State = 9;
+  repeated History History = 10;
 }
