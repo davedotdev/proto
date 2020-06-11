@@ -10,6 +10,8 @@ enum State {
 	DEPLOY = 3;
 	DEPLOYED = 4;
 	ERROR = 5;
+  CHECKHASH = 6;
+  COLLISION = 7;
 }
 
 enum MetaType {
@@ -31,14 +33,15 @@ message History {
 }
 
 message TFMeta {
-  string ProviderName = 1;
-  string ResourceName = 2;
-  string Payload = 3;
-  MetaType MetaType = 4;
-  string TransactionUUID = 5;
-  string TransactionName = 6;
-  string Description = 7;
-  repeated Plans Plans = 8;
-  State State = 9;
-  repeated History History = 10;
+  State State = 1;
+  MetaType MetaType = 2;
+  string Device = 3;
+  string ProviderName = 4;
+  string ResourceName = 5;
+  string Payload = 6;
+  string TransactionUUID = 7;
+  string TransactionName = 8;
+  string Description = 9;
+  repeated Plans Plans = 10;
+  repeated History History = 11;
 }
