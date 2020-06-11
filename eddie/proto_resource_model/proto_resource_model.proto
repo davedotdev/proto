@@ -4,14 +4,18 @@ syntax = "proto3";
 option go_package = "github.com/davedotdev/proto/eddie/proto_resource_model";
 
 enum State {
-	INIT = 0;
-	PLAN = 1;
-	APPROVALS = 2;
-	DEPLOY = 3;
-	DEPLOYED = 4;
-	ERROR = 5;
-  CHECKHASH = 6;
-  COLLISION = 7;
+	MODELCREATE = 0;
+	MODELCREATED = 1;
+	MODELDELETE = 2;
+	MODELDELETED = 3;
+	MODELERROR = 4;
+	JOBINIT = 5;
+	JOBPLAN = 6;
+	JOBAPPROVE = 7;
+	JOBAPPROVED = 8;
+	JOBDEPLOY = 9;
+	JOBDEPLOYED = 10;
+	JOBERROR = 11;
 }
 
 enum MetaType {
@@ -38,10 +42,10 @@ message TFMeta {
   string Device = 3;
   string ProviderName = 4;
   string ResourceName = 5;
-  string Payload = 6;
-  string TransactionUUID = 7;
-  string TransactionName = 8;
-  string Description = 9;
-  repeated Plans Plans = 10;
-  repeated History History = 11;
+  string TransactionUUID = 6;
+  string Description = 7;  
+  repeated Plans Plans = 8;
+  repeated History History = 9;
+  string Hash = 10;
+  string Payload = 11;
 }
