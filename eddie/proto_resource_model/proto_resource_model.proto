@@ -36,7 +36,7 @@ message History {
   string Username = 4;
 }
 
-message TFMeta {
+message EdMeta {
   State State = 1;
   MetaType MetaType = 2;
   string Device = 3;
@@ -48,4 +48,6 @@ message TFMeta {
   repeated History History = 9;
   string Hash = 10;
   string Payload = 11;
+  repeated string ModelUUIDs = 12;
+  string Orchestrator = 13;
 }
