@@ -9,13 +9,15 @@ enum State {
 	MODELDELETE = 2;
 	MODELDELETED = 3;
 	MODELERROR = 4;
-	JOBINIT = 5;
-	JOBPLAN = 6;
-	JOBAPPROVE = 7;
-	JOBAPPROVED = 8;
-	JOBDEPLOY = 9;
-	JOBDEPLOYED = 10;
-	JOBERROR = 11;
+  MODELGET = 5;
+	JOBINIT = 6;
+	JOBPLAN = 7;
+	JOBAPPROVE = 8;
+	JOBAPPROVED = 9;
+	JOBDEPLOY = 10;
+	JOBDEPLOYED = 11;
+	JOBERROR = 12;
+  JOBGET = 13;
 }
 
 enum MetaType {
@@ -39,7 +41,7 @@ message History {
 message EdMeta {
   State State = 1;
   MetaType MetaType = 2;
-  string Device = 3;
+  string DeviceName = 3;
   string ProviderName = 4;
   string ResourceName = 5;
   string TransactionUUID = 6;
