@@ -8,7 +8,7 @@ enum Operation {
   READ   = 1;
   UPDATE = 2;
   DELETE = 3;
-  FORCE_DELETE = 4;
+  DELETE_FULL = 4;
   PROCESSING = 5;
   DONE = 6;
   READY = 7;
