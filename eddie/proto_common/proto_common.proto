@@ -8,11 +8,12 @@ enum Operation {
   READ   = 1;
   UPDATE = 2;
   DELETE = 3;
-  PROCESSING = 4;
-  DONE = 5;
-  READY = 6;
-  NOTHING_TO_DO = 7;
-  READ_NODE_BY_ID = 8;
+  FORCE_DELETE = 4;
+  PROCESSING = 5;
+  DONE = 6;
+  READY = 7;
+  NOTHING_TO_DO = 8;
+  READ_NODE_BY_ID = 9;
 }
 
 message KV  {
