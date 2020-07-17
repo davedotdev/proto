@@ -9,11 +9,13 @@ enum Operation {
   UPDATE = 2;
   DELETE = 3;
   DELETE_FULL = 4;
-  PROCESSING = 5;
-  DONE = 6;
-  READY = 7;
-  NOTHING_TO_DO = 8;
-  READ_NODE_BY_ID = 9;
+  DELETE_RESOURCE = 5;
+  PROCESSING = 6;
+  DONE = 7;
+  READY = 8;
+  NOTHING_TO_DO = 9;
+  READ_NODE_BY_ID = 10;
+  UPDATE_NODE_BY_ID = 11;
 }
 
 message KV  {

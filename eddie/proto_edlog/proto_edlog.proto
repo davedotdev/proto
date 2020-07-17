@@ -1,0 +1,20 @@
+// This file contains PB for logging
+syntax = "proto3";
+
+import "github.com/infobloxopen/protoc-gen-gorm/options/gorm.proto";
+
+option go_package = "github.com/davedotdev/proto/eddie/proto_edlog";
+
+message EdLog  {
+  option (gorm.opts) = {
+    ormable: true,
+  };
+  string ServiceName = 1;
+  string Host = 2;
+  int64 PID = 3;
+  int64 PPID = 4;
+  string Level = 5;
+  string Function = 6;
+  string Information = 7;
+}
+

@@ -1,0 +1,16 @@
+// This file contains an inventory PB for a device
+syntax = "proto3";
+
+option go_package = "github.com/davedotdev/proto/eddie/proto_signals";
+
+enum Operation {
+  PLAN = 0;
+  DEPLOY = 1;
+  GENCONFIG = 2;
+}
+
+message Signal {
+  Operation Operator = 1;
+  string UUID = 2;
+}
+

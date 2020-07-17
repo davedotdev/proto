@@ -1,0 +1,34 @@
+// This file contains PB for tasks
+// https://godoc.org/github.com/golang/protobuf/ptypes/timestamp
+syntax = "proto3";
+
+import "github.com/infobloxopen/protoc-gen-gorm/options/gorm.proto";
+import "google/protobuf/timestamp.proto";
+
+option go_package = "github.com/davedotdev/proto/eddie/proto_tasks";
+
+message Task  {
+  option (gorm.opts) = {
+    ormable: true,
+  };
+  string ServiceName = 1;
+  string UUID = 2;
+  google.protobuf.Timestamp TaskStart = 3;
+  google.protobuf.Timestamp TaskStop = 4;
+  string EntryName = 5;
+  Status Status = 6;
+  string Logs = 7;
+  repeated Inputs Inputs = 8;
+}
+
+message Inputs  {
+  string key = 1;
+  string value = 2;
+}
+
+enum Status {
+  INIT = 0;
+  TRAVERSING = 1;
+  COMPLETE = 2;
+  ERROR = 3;
+}
