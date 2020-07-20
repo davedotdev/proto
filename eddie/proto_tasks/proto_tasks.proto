@@ -18,12 +18,7 @@ message Task  {
   string EntryName = 5;
   Status Status = 6;
   string Logs = 7;
-  repeated Inputs Inputs = 8;
-}
-
-message Inputs  {
-  string key = 1;
-  string value = 2;
+  string JSONKV = 8;
 }
 
 enum Status {

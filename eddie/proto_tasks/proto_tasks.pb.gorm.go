@@ -9,22 +9,28 @@ It is generated from these files:
 
 It has these top-level messages:
 	Task
-	Inputs
 */
 package proto_tasks
 
-import context "context"
-import time "time"
+import (
+	context "context"
+	time "time"
 
-import errors1 "github.com/infobloxopen/protoc-gen-gorm/errors"
-import field_mask1 "google.golang.org/genproto/protobuf/field_mask"
-import gorm1 "github.com/jinzhu/gorm"
-import gorm2 "github.com/infobloxopen/atlas-app-toolkit/gorm"
-import ptypes1 "github.com/golang/protobuf/ptypes"
+	errors1 "github.com/infobloxopen/protoc-gen-gorm/errors"
+	field_mask1 "google.golang.org/genproto/protobuf/field_mask"
 
-import fmt "fmt"
-import math "math"
-import _ "github.com/golang/protobuf/ptypes/timestamp"
+	gorm1 "github.com/jinzhu/gorm"
+
+	gorm2 "github.com/infobloxopen/atlas-app-toolkit/gorm"
+
+	ptypes1 "github.com/golang/protobuf/ptypes"
+
+	fmt "fmt"
+
+	math "math"
+
+	_ "github.com/golang/protobuf/ptypes/timestamp"
+)
 
 // Reference imports to suppress errors if they are not otherwise used.
 var _ = fmt.Errorf
@@ -32,6 +38,7 @@ var _ = math.Inf
 
 type TaskORM struct {
 	EntryName   string
+	JSONKV      string
 	Logs        string
 	ServiceName string
 	Status      string
@@ -74,7 +81,7 @@ func (m *Task) ToORM(ctx context.Context) (TaskORM, error) {
 	to.EntryName = m.EntryName
 	to.Status = Status_name[int32(m.Status)]
 	to.Logs = m.Logs
-	// Repeated type []*Inputs is not an ORMable message type
+	to.JSONKV = m.JSONKV
 	if posthook, ok := interface{}(m).(TaskWithAfterToORM); ok {
 		err = posthook.AfterToORM(ctx, &to)
 	}
@@ -106,7 +113,7 @@ func (m *TaskORM) ToPB(ctx context.Context) (Task, error) {
 	to.EntryName = m.EntryName
 	to.Status = Status(Status_value[m.Status])
 	to.Logs = m.Logs
-	// Repeated type []*Inputs is not an ORMable message type
+	to.JSONKV = m.JSONKV
 	if posthook, ok := interface{}(m).(TaskWithAfterToPB); ok {
 		err = posthook.AfterToPB(ctx, &to)
 	}
@@ -206,8 +213,8 @@ func DefaultApplyFieldMaskTask(ctx context.Context, patchee *Task, patcher *Task
 			patchee.Logs = patcher.Logs
 			continue
 		}
-		if f == prefix+"Inputs" {
-			patchee.Inputs = patcher.Inputs
+		if f == prefix+"JSONKV" {
+			patchee.JSONKV = patcher.JSONKV
 			continue
 		}
 	}
