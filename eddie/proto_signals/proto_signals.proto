@@ -12,5 +12,6 @@ enum Sig {
 message Signal {
   Sig Sig = 1;
   string UUID = 2;
+  repeated string UUIDList = 3;
 }
 
